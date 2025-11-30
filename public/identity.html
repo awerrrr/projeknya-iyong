@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lengkapi Identitas Pengguna</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="bg-gradient">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">BAPSA</div>
+        <div class="crumb">Lengkapi Identitas</div>
+      </div>
+      <nav class="top-actions">
+        <a class="btn ghost" href="/index.html">Login</a>
+      </nav>
+    </header>
+
+    <main class="center">
+      <section class="card auth-card" style="max-width:640px">
+        <div class="logo-circle">BAPSA</div>
+        <h1 class="title">Identitas Pengguna</h1>
+        <p class="subtitle">Wajib diisi untuk Petugas dan Pemesan</p>
+        <form id="identityForm" class="form">
+          <label class="label">Pilihan Role</label>
+          <select id="identRole" class="input" required>
+            <option value="petugas">Petugas</option>
+            <option value="pemesan">Pemesan</option>
+            <option value="admin">Admin</option>
+          </select>
+          <label class="label">Nama</label>
+          <input id="identName" type="text" class="input" placeholder="Nama lengkap" required />
+          <label class="label">Email</label>
+          <input id="identEmail" type="email" class="input" placeholder="nama@contoh.com" required />
+          <button class="btn primary full" type="submit">Lanjut ke Dashboard</button>
+          <p class="muted small" style="text-align:center;margin-top:8px">Admin tidak wajib mengisi — akan diarahkan langsung.</p>
+        </form>
+      </section>
+    </main>
+
+    <script src="/js/config.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/identity.js"></script>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Konfirmasi BAPB</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="bg-light">
+  <header class="topbar no-print">
+    <div class="brand">
+      <div class="logo">BAPSA</div>
+      <nav class="crumb-nav">
+        <a class="crumb-link" href="/dashboard.html">Dashboard</a>
+        <a class="crumb-link" href="/arsip.html">Arsip</a>
+      </nav>
+    </div>
+    <nav class="top-actions">
+      <span id="userBadge" class="badge"></span>
+      <a class="btn back-btn" href="#" id="topBackBtn">← Kembali</a>
+      <a class="btn ghost" href="#" id="logoutBtn">Logout</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="panel">
+      <div class="row end gap no-print" style="padding:12px 16px">
+        <a class="btn" id="backBtn" href="#">← Kembali</a>
+        <button class="btn primary" id="printBtn">Cetak / Simpan PDF</button>
+      </div>
+      <div class="panel-header no-print">
+        <h2 style="margin:0">Review BAPB: <span id="pageTitleBapb">-</span></h2>
+        <div class="row gap" style="margin-top:8px; align-items:center">
+          <span class="badge warning" id="statusPill">Menunggu Persetujuan</span>
+          <span class="muted small">Tanggal: <span id="reviewDate">-</span></span>
+        </div>
+      </div>
+      <div class="panel-body" style="padding:16px">
+        <section class="letter-wrapper">
+          <h3 class="letter-title">BERITA ACARA PEMERIKSAAN BARANG</h3>
+          <div class="letter-grid">
+            <div class="letter-field">
+              <div class="label small">PETUGAS PEMERIKSA</div>
+              <div id="inspectorName" class="input"></div>
+            </div>
+            <div class="letter-field">
+              <div class="label small">TANGGAL TIBA</div>
+              <div id="arrivalDate" class="input"></div>
+            </div>
+            <div class="letter-field">
+              <div class="label small">EMAIL PETUGAS</div>
+              <div id="inspectorEmail" class="input"></div>
+            </div>
+            <div class="letter-field">
+              <div class="label small">EMAIL PEMESAN</div>
+              <div id="importerEmail" class="input"></div>
+            </div>
+            <div class="letter-field">
+              <div class="label small">VENDOR</div>
+              <div id="vendorName" class="input"></div>
+            </div>
+            <div class="letter-field">
+              <div class="label small">TANGGAL PEMERIKSAAN</div>
+              <div id="inspectDate" class="input"></div>
+            </div>
+            <div class="letter-field">
+              <div class="label small">KONTRAK</div>
+              <div id="contractNo" class="input">-</div>
+            </div>
+            <div class="letter-field">
+              <div class="label small">HASIL PEMERIKSAAN</div>
+              <div class="input"><a id="resultBadge" class="badge">-</a></div>
+            </div>
+          </div>
+        </section>
+
+        <div style="margin:12px 0">
+          <table class="table" id="resultTable">
+            <thead>
+              <tr>
+                <th>BARANG</th>
+                <th>JML (FISIK)</th>
+                <th>KONDISI</th>
+                <th>CATATAN</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <!-- Blok tanda tangan khusus cetak -->
+        <section id="signaturePrint" class="print-only" style="margin-top:24px">
+          <div class="row between" style="justify-content:space-between">
+            <div style="flex:1;text-align:center">
+              <div class="label" style="font-weight:700">Petugas Pemeriksa</div>
+              <div id="sigOfficer" class="small" style="margin-top:32px">
+                <span style="font-weight:600;text-decoration:underline">Petugas Gudang (SPO)</span><br/>
+                <span class="muted">Ditandatangani secara digital</span>
+              </div>
+            </div>
+            <div style="flex:1;text-align:center">
+              <div class="label" style="font-weight:700">Pihak Pemesan (Importir)</div>
+              <div id="sigImporter" class="small muted" style="margin-top:32px">
+                <em>(Belum Ditandatangani)</em>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- status hasil dipindahkan ke blok di atas sesuai desain -->
+
+        <section id="approvalSection" class="no-print" style="margin-top:24px">
+          <h3>Tindakan Persetujuan</h3>
+          <div class="row gap">
+            <div style="flex:1; border:1px solid #cfe9d8; background:#eaf7f0; padding:16px; border-radius:8px">
+              <div class="label">Setujui Dokumen</div>
+              <p>Dengan ini saya menyetujui hasil pemeriksaan barang.</p>
+              <button id="applySignature" class="btn success" style="width:100%">TTD Digital</button>
+            </div>
+            <div id="rejectPanel" style="flex:1; border:1px solid #f3c6c6; background:#fdf2f2; padding:16px; border-radius:8px">
+              <div class="label">Tolak Dokumen</div>
+              <textarea id="rejectReason" class="input" rows="3" placeholder="Alasan penolakan..."></textarea>
+            </div>
+          </div>
+        </section>
+
+        <div id="actionButtonsRow" class="row end gap no-print" style="margin-top:16px">
+          <button id="rejectBtnMain" class="btn">Tolak</button>
+          <button id="approveFinishBtnMain" class="btn primary">Setujui & Selesaikan</button>
+          <button class="btn primary" id="submitApproval">Simpan & Ajukan Persetujuan</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/storage.js"></script>
+  <script src="/js/signature.js"></script>
+  <script src="/js/confirm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./js/supabase.js"></script>
+
+</body>
+</html>

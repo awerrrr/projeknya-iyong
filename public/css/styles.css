@@ -1,0 +1,143 @@
+:root{
+  --bg:#f5f6f8;
+  --card:#000000;
+  --muted:#6b7280;
+  --primary:#000000;
+  --accent:#2563eb;
+  --success:#16a34a;
+  --warning:#f59e0b;
+  --danger:#ef4444;
+  --radius:14px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--primary)}
+/* memastikan warna latar dan header tabel tetap tercetak dengan benar */
+body{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+.bg-gradient{
+  min-height:100vh;
+  background: linear-gradient(180deg,#e9ecef 0%, #ffffff 100%);
+}
+.bg-light{min-height:100vh;background:var(--bg)}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{background:#1f2937;color:#fff;border-radius:12px;padding:6px 10px;font-weight:700}
+.crumb{color:var(--muted)}
+.crumb-nav{display:flex;align-items:center;gap:8px}
+.crumb-link{color:#111;padding:4px 10px;border-radius:999px;text-decoration:none;transition:transform .06s ease, background .15s ease, color .15s ease; font-weight:700}
+.crumb-link:hover{background:#e5e7eb;color:#111}
+.crumb-link:active{transform:scale(0.98);background:#d1d5db;color:#111}
+.crumb-link.active{background:#fff;color:#111;border:2px solid #111;border-radius:999px}
+.top-actions{display:flex;align-items:center;gap:12px}
+
+.btn{border:1px solid #d1d5db;background:#fff;border-radius:10px;padding:8px 14px;cursor:pointer}
+.btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+.btn.secondary{background:#e5e7eb;color:#111}
+.btn.success{background:#22c55e;border-color:#16a34a;color:#fff}
+.btn.ghost{background:#fff;border-color:#cbd5e1}
+.btn.full{width:100%}
+/* Back button style and click effect */
+.back-btn{border-color:#cbd5e1;background:#ffffff;color:#111;transition:transform .06s ease, box-shadow .15s ease, background .15s ease}
+.back-btn:hover{background:#eef2ff;box-shadow:0 3px 12px rgba(0,0,0,0.06)}
+.back-btn:active{transform:scale(0.98);background:#e0e7ff}
+
+.center{display:flex;justify-content:center;align-items:center;padding:40px}
+.auth-card{width:100%;max-width:560px;background:var(--card);border-radius:var(--radius);box-shadow:0 12px 30px rgba(0,0,0,0.08);padding:28px;text-align:left}
+.logo-circle{width:56px;height:56px;border-radius:50%;background:#e5e7eb;color:#111;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-weight:700}
+.title{text-align:center;margin:8px 0 4px}
+.subtitle{text-align:center;color:var(--muted);margin:0 0 16px}
+
+.form{display:flex;flex-direction:column;gap:10px}
+.label{font-size:14px;color:#374151}
+.input{padding:12px;border:1px solid #d1d5db;border-radius:10px;background:#fff;width:100%}
+.row{display:flex;align-items:center}
+.between{justify-content:space-between}
+.end{justify-content:flex-end}
+.gap{gap:10px}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+.link{color:#2563eb;text-decoration:none}
+.center-text{text-align:center}
+
+.container{padding:24px;max-width:1080px;margin:0 auto}
+.widgets{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.widget{background:var(--card);border-radius:var(--radius);padding:16px;box-shadow:0 6px 16px rgba(0,0,0,0.06)}
+.widget.right{display:flex;align-items:center;justify-content:flex-end}
+.widget-title{color:#fff;font-size:14px;font-weight:700}
+.widget-value{font-size:32px;font-weight:700;color:#fff}
+.widget-sub{color:#fff;font-weight:700}
+
+.panel{background:#111827;color:var(--primary);border-radius:16px;overflow:hidden;margin-top:12px}
+.panel-header{padding:16px 20px;color:#fff}
+.panel-header h3{margin:0}
+.panel-body{background:#f9fafb;padding:0}
+
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:12px;border-bottom:1px solid #e5e7eb;text-align:left}
+.table th{background:#f3f4f6;color:#374151}
+.badge{background:#e5e7eb;color:#111;border-radius:999px;padding:6px 10px}
+.status{border-radius:999px;padding:4px 10px;font-size:12px;display:inline-block}
+.status.arrived{background:#fde68a;color:#593d00}
+.status.inspected{background:#a7f3d0;color:#064e3b}
+.status.waiting{background:#f3f4f6;color:#111}
+
+.dialog{border:none;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.2);padding:18px}
+@media (max-width:900px){
+  .widgets{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){
+  .widgets{grid-template-columns:1fr}
+}
+
+.map{width:100%;height:280px;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;margin:6px 0;background:#f3f4f6}
+
+/* --- Refinements for Inspection Page --- */
+#contractTitle{font-size:24px;font-weight:700;margin:8px 0 12px;letter-spacing:.2px}
+
+/* Dark header for items table; keep body light */
+#itemsTable{border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb}
+#itemsTable thead th{background:#111827;color:#fff;font-weight:600}
+#itemsTable tbody td{background:#fff}
+#itemsTable tbody tr:hover td{background:#f9fafb}
+/* Alignment tweaks for quantities and headers */
+#resultTable thead th:nth-child(2),
+#resultTable tbody td:nth-child(2){text-align:right}
+
+/* Labels and inputs inside panel-body for better readability */
+.panel-body .label{color:#111;font-weight:600}
+.panel-body .input{background:#fff}
+
+/* --- Approval Card (Confirm Page) --- */
+.approval-card{background:#ecfdf5;border:1px solid #d1fae5;border-radius:12px;padding:16px;box-shadow:0 6px 16px rgba(0,0,0,.04)}
+.approval-card::before{content:"Setujui Dokumen";display:block;font-weight:700;color:#065f46;margin-bottom:8px}
+.approval-card .input{background:#ffffff;border-color:#d1fae5}
+ .approval-card #applySignature{background:#22c55e;border-color:#16a34a;color:#fff;display:inline-block}
+
+/* --- Letter Layout (Confirm Page) --- */
+.letter-wrapper{background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;box-shadow:0 6px 16px rgba(0,0,0,.04)}
+.letter-title{text-align:center;margin:0 0 12px 0;font-weight:800;letter-spacing:.2px}
+.letter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;align-items:start}
+.letter-field .label{font-weight:700;color:#111;margin-bottom:4px}
+.letter-field .input{min-height:44px;display:flex;align-items:center;border:1px solid #d1d5db;border-radius:10px;background:#fff;padding:10px}
+.letter-field .badge{margin:0}
+
+
+/* --- Cetak PDF (Confirm Page) --- */
+.print-only{display:none}
+
+@media print{
+  @page { size: A4; margin: 15mm; }
+  /* sembunyikan elemen non-esensial saat cetak */
+  .topbar,.panel-header,.no-print{display:none !important}
+  /* bentangkan konten untuk cetak */
+  .container{max-width:100%;padding:0}
+  .panel{box-shadow:none;border:none;background:#fff}
+  .panel-body{padding:0 0 6mm 0}
+  .letter-wrapper{box-shadow:none;border-color:#e5e7eb}
+  /* tampilkan blok khusus cetak */
+  .print-only{display:block}
+  /* table header agar tercetak gelap */
+  #resultTable thead th{background:#111827 !important;color:#fff !important}
+}

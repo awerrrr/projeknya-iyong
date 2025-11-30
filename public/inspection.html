@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BAPSA - Pemeriksaan Barang</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="bg-light">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">BAPSA</div>
+      <nav class="crumb-nav">
+        <a class="crumb-link" href="/dashboard.html">Dashboard</a>
+        <a class="crumb-link" href="/arsip.html">Arsip</a>
+      </nav>
+    </div>
+    <nav class="top-actions">
+      <span id="userBadge" class="badge"></span>
+      <a class="btn ghost" href="#" id="logoutBtn">Logout</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 id="contractTitle">Pemeriksaan Barang</h2>
+    <div class="panel">
+      <div class="panel-header">
+        <div class="row between">
+          <strong>No. Kontrak: <span id="contractNo">-</span></strong>
+          <span id="inspectorInfo" class="muted small"></span>
+        </div>
+      </div>
+      <div class="panel-body" style="padding:16px">
+        <div class="row gap" style="margin-bottom:12px">
+          <div style="flex:1">
+            <label class="label">Petugas Pemeriksa</label>
+            <input id="inspector" class="input" readonly />
+          </div>
+          <div style="flex:1">
+            <label class="label">Tanggal Pemeriksaan</label>
+            <input id="inspectDate" type="date" class="input" />
+          </div>
+        </div>
+        <div class="row gap" style="margin-bottom:12px">
+          <div style="flex:1">
+            <label class="label">Email Petugas</label>
+            <input id="inspectorEmail" class="input" readonly />
+          </div>
+          <div style="flex:1"></div>
+        </div>
+
+        <div class="row between" style="margin-bottom:6px">
+          <div class="label">Checklist Barang</div>
+          <button id="addItemBtn" class="btn success">+ Tambah Barang</button>
+        </div>
+        <table class="table" id="itemsTable">
+          <thead>
+            <tr>
+              <th>Barang</th>
+              <th>Jml (Fisik)</th>
+              <th>Kondisi</th>
+              <th>Catatan</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <div style="margin-top:12px">
+          <label class="label">Catatan Ketidaksesuaian (Opsional)</label>
+          <textarea id="notes" class="input" rows="3" placeholder="Tulis jika ada temuan, misal: barang kurang 1, packing rusak, dll."></textarea>
+        </div>
+
+        <div class="row end gap" style="margin-top:12px">
+          <button id="saveDraft" class="btn">Simpan Draft</button>
+          <button id="continueBtn" class="btn primary">Lanjut Buat Berita Acara</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/storage.js"></script>
+  <script src="/js/inspection.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./js/supabase.js"></script>
+
+</body>
+</html>

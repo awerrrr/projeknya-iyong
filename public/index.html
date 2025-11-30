@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digitalisasi Berita Acara - Login</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="bg-gradient">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">BAPSA</div>
+    </div>
+    <nav class="top-actions">
+      <a class="btn ghost" href="/index.html">Login</a>
+      <a class="btn ghost" href="/register.html">Daftar</a>
+    </nav>
+  </header>
+
+  <main class="center">
+    <section class="card auth-card">
+      <div class="logo-circle">BAPSA</div>
+      <h1 class="title">Digitalisasi Berita Acara</h1>
+      <p class="subtitle">Platform AC-08 (Dicoding x Accenture)</p>
+      <form id="loginForm" class="form">
+        <label class="label">Username (Role)</label>
+        <input id="loginEmail" type="text" class="input" placeholder="Ketik 'petugas', 'pemesan', atau 'admin'" required />
+        <label class="label">Password</label>
+        <input id="loginPassword" type="password" class="input" placeholder="•••" required />
+        <button class="btn primary full" type="submit">Masuk</button>
+        <p class="muted small" style="text-align:center;margin-top:8px">Hint: Login sebagai <strong>petugas</strong>, <strong>pemesan</strong>, atau <strong>admin</strong>.</p>
+      </form>
+    </section>
+  </main>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/auth.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('loginEmail').value.trim().toLowerCase();
+      const password = document.getElementById('loginPassword').value;
+      try {
+        await window.Auth.loginRole(username, password);
+        // Setelah login, arahkan ke identitas jika role petugas/pemesan
+        if(username === 'petugas' || username === 'pemesan'){
+          window.location.href = '/identity.html';
+        } else {
+          window.location.href = '/dashboard.html';
+        }
+      } catch (err) {
+        alert(err.message);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BAPSA - Dashboard Petugas Gudang</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+<body class="bg-light">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">BAPSA</div>
+      <nav class="crumb-nav">
+        <a class="crumb-link active" href="/dashboard.html">Dashboard</a>
+        <a class="crumb-link" href="/arsip.html">Arsip</a>
+      </nav>
+    </div>
+    <nav class="top-actions">
+      <span id="userBadge" class="badge"></span>
+      <a class="btn ghost" href="#" id="logoutBtn">Logout</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Dashboard Petugas Gudang</h2>
+    <div class="widgets">
+      <div class="widget">
+        <div class="widget-title">Pengiriman Masuk (Baru)</div>
+        <div class="widget-value" id="statMasuk">0</div>
+        <div class="widget-sub">Pengiriman</div>
+      </div>
+      <div class="widget">
+        <div class="widget-title">Menunggu Persetujuan</div>
+        <div class="widget-value" id="statPersetujuan">0</div>
+        <div class="widget-sub">Dokumen</div>
+      </div>
+      <div class="widget">
+        <div class="widget-title">BAPB Dibuka</div>
+        <div class="widget-value" id="statBuka">0</div>
+        <div class="widget-sub">Dokumen</div>
+      </div>
+      <div class="widget right">
+        <button id="addShipmentBtn" class="btn success">+ Tambah Pengiriman</button>
+      </div>
+    </div>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h3>Pengiriman Masuk (untuk Diperiksa)</h3>
+        <p class="muted small">Daftar pengiriman yang memerlukan pemeriksaan fisik dan BAPB</p>
+      </div>
+      <div class="panel-body">
+        <div id="adminSearchWrap" class="row gap" style="margin-bottom:12px; display:none">
+          <input id="adminSearch" class="input" placeholder="Cari No Kontrak..." style="flex:1" />
+        </div>
+        <table class="table" id="shipmentsTable">
+          <thead>
+            <tr>
+              <th>No.Kontrak</th>
+              <th>Vendor</th>
+              <th>Tanggal Tiba</th>
+              <th>Status</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <dialog id="uploadDialog" class="dialog">
+      <form id="uploadForm" method="dialog">
+        <h3>Tambah Pengiriman Baru</h3>
+        <label class="label">Nomor Kontrak</label>
+        <input type="text" id="upContract" class="input" placeholder="contoh : KTR-004" required />
+        <label class="label">Vendor / Pengirim</label>
+        <input type="text" id="upVendor" class="input" placeholder="contoh : Logistik Asia" required />
+        <label class="label">Tanggal Tiba</label>
+        <input type="date" id="upDate" class="input" required />
+        <div class="row end gap">
+          <button class="btn" value="cancel" type="button" id="cancelUpload">Batal</button>
+          <button class="btn primary" value="default" type="submit">Simpan</button>
+        </div>
+      </form>
+    </dialog>
+  </main>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/storage.js"></script>
+  <script src="/js/signature.js"></script>
+  <script src="/js/dashboard.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./js/supabase.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BAPSA - Arsip Berita Acara</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="bg-light">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">BAPSA</div>
+        <nav class="crumb-nav">
+          <a class="crumb-link" href="/dashboard.html">Dashboard</a>
+          <a class="crumb-link active" href="/arsip.html">Arsip</a>
+        </nav>
+      </div>
+      <nav class="top-actions">
+        <span id="userBadge" class="badge"></span>
+        <a class="btn ghost" href="#" id="logoutBtn">Logout</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h2>Arsip Berita Acara</h2>
+      <p class="muted small">Total Dokumen: <span id="totalDocs">0</span></p>
+
+      <div class="row gap" style="margin-bottom:12px">
+        <input id="searchInput" class="input" placeholder="Cari No BAPB atau Kontrak..." style="flex:1" />
+        <select id="statusFilter" class="input" style="width:200px">
+          <option value="ALL">Semua Status</option>
+          <option value="Menunggu Persetujuan">Menunggu Persetujuan</option>
+          <option value="BAPB Dibuka">BAPB Dibuka</option>
+          <option value="Barang Tiba">Barang Tiba</option>
+          <option value="Sudah Ditandatangani">Sudah Ditandatangani</option>
+        </select>
+      </div>
+
+      <section class="panel">
+        <div class="panel-body">
+          <table class="table" id="archiveTable">
+            <thead>
+              <tr>
+                <th>NO BAPB</th>
+                <th>KONTRAK</th>
+                <th>PETUGAS</th>
+                <th>STATUS</th>
+                <th>AKSI</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/config.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/storage.js"></script>
+    <script src="/js/archive.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./js/supabase.js"></script>
+  </body>
+</html>

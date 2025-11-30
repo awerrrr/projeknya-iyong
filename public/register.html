@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BAPSA - Daftar</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="bg-gradient">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">BAPSA</div>
+    </div>
+    <nav class="top-actions">
+      <a class="btn ghost" href="/index.html">Login</a>
+      <a class="btn ghost" href="/register.html">Daftar</a>
+    </nav>
+  </header>
+
+  <main class="center">
+    <section class="card auth-card">
+      <div class="logo-circle">BAPSA</div>
+      <h1 class="title">Login to your account</h1>
+      <p class="subtitle">Welcome back! Time to login for continue.</p>
+      <form id="registerForm" class="form">
+        <label class="label">Email address</label>
+        <input id="regEmail" type="email" class="input" placeholder="contoh@email.com" required />
+
+        <label class="label">Password</label>
+        <input id="regPassword" type="password" class="input" placeholder="ketik password" required />
+
+        <div class="row between small">
+          <label class="checkbox"><input id="remember" type="checkbox"/> <span>Remember me</span></label>
+          <a class="link" href="#" onclick="alert('Reset password melalui admin.')">Forgot password?</a>
+        </div>
+
+        <label class="label">Peran</label>
+        <select id="regRole" class="input">
+          <option value="petugas">Petugas Gudang</option>
+          <option value="pemesan">Pemesan</option>
+        </select>
+
+        <button class="btn primary full" type="submit">Daftar</button>
+        <div class="center-text muted small" style="margin-top:8px">atau</div>
+        <button class="btn secondary full" type="button" onclick="alert('Login dengan OAuth belum diaktifkan')">Sign in with Google</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/auth.js"></script>
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('regEmail').value.trim();
+      const password = document.getElementById('regPassword').value;
+      const role = document.getElementById('regRole').value;
+      try {
+        await window.Auth.register(email, password, role);
+        alert('Pendaftaran berhasil, silakan login.');
+        window.location.href = '/index.html';
+      } catch (err) {
+        alert(err.message);
+      }
+    });
+  </script>
+</body>
+</html>

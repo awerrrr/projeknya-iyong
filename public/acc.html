@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BAPSA - Dokumen ACC (Admin)</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="bg-light">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">BAPSA</div>
+        <nav class="crumb-nav">
+          <a class="crumb-link" href="/dashboard.html">Dashboard</a>
+          <a class="crumb-link" href="/arsip.html">Arsip</a>
+          <a class="crumb-link active" href="/acc.html">Dokumen ACC</a>
+        </nav>
+      </div>
+      <nav class="top-actions">
+        <span id="userBadge" class="badge"></span>
+        <a class="btn ghost" href="#" id="logoutBtn">Logout</a>
+      </nav>
+    </header>
+  <main class="container">
+    <h2>Dokumen ACC oleh Pemesan</h2>
+    <p class="muted">Menampilkan dokumen BAPB yang diunggah atau ditandatangani manual oleh Pemesan.</p>
+    <div class="row gap" style="margin-bottom:12px">
+      <input id="searchInput" class="input" placeholder="Cari kontrak/vendor..." style="flex:1" />
+    </div>
+    <table class="table" id="accTable">
+      <thead>
+        <tr>
+          <th>Kontrak</th>
+          <th>Vendor</th>
+          <th>Tanggal Kedatangan</th>
+          <th>Dokumen</th>
+          <th>Lihat Detail Dokumen</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div id="emptyState" class="muted" style="display:none; padding:12px;">Belum ada dokumen ACC dari Pemesan.</div>
+  </main>
+
+  <script src="/js/auth.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/storage.js"></script>
+  <script src="/js/acc.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./js/supabase.js"></script>
+
+</body>
+</html>
