@@ -1,0 +1,101 @@
+[
+  {
+    "shipmentId": "doc_1764316560895",
+    "inspectorName": "septian syefurrosyad",
+    "inspectorEmail": "stian6718@gmail.com",
+    "inspectDate": "2025-11-28",
+    "items": [
+      {
+        "name": "KURSI",
+        "physQty": "56",
+        "condition": "Baik",
+        "note": "BARANG OKE"
+      },
+      {
+        "name": "MEJA",
+        "physQty": "90",
+        "condition": "Kurang",
+        "note": "BARANG LECET"
+      },
+      {
+        "name": "",
+        "physQty": 0,
+        "condition": "Opsional",
+        "note": ""
+      }
+    ],
+    "note": ""
+  },
+  {
+    "shipmentId": "doc_1764316596255",
+    "inspectorName": "septian syefurrosyad",
+    "inspectorEmail": "stian6718@gmail.com",
+    "inspectDate": "2025-11-28",
+    "items": [
+      {
+        "name": "TEH",
+        "physQty": "333",
+        "condition": "Kurang",
+        "note": "AODSS"
+      },
+      {
+        "name": "BAJU",
+        "physQty": "231",
+        "condition": "Baik",
+        "note": "SDFSDSDF"
+      },
+      {
+        "name": "MAINAN PRIA",
+        "physQty": "123",
+        "condition": "Opsional",
+        "note": ""
+      }
+    ],
+    "note": ""
+  },
+  {
+    "shipmentId": "doc_1764318860494",
+    "inspectorName": "cecep",
+    "inspectorEmail": "cecep6718@gmail.com",
+    "inspectDate": "2025-11-28",
+    "items": [
+      {
+        "name": "MEJA",
+        "physQty": "122",
+        "condition": "Baik",
+        "note": "BARANG LECET"
+      },
+      {
+        "name": "SAMPO",
+        "physQty": "222",
+        "condition": "Kurang",
+        "note": ""
+      },
+      {
+        "name": "SABUN",
+        "physQty": "321",
+        "condition": "Kurang",
+        "note": ""
+      },
+      {
+        "name": "HELM",
+        "physQty": "124",
+        "condition": "Baik",
+        "note": ""
+      },
+      {
+        "name": "JEPITAN",
+        "physQty": "125",
+        "condition": "Baik",
+        "note": ""
+      },
+      {
+        "name": "CELANA",
+        "physQty": "290",
+        "condition": "Rusak",
+        "note": ""
+      }
+    ],
+    "note": "ADADSDADASDADS"
+  }
+]

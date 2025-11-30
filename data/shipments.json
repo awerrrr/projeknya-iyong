@@ -1,0 +1,45 @@
+[
+  {
+    "id": "doc_1764316560895",
+    "meta": {
+      "contract": "KTR-001",
+      "vendor": "PT. JANDA KUAT",
+      "arrivalDate": "2025-11-27",
+      "status": "BAPB Dibuka",
+      "geo": null
+    },
+    "signatures": [],
+    "files": [],
+    "createdAt": "2025-11-28T07:56:00.916Z"
+  },
+  {
+    "id": "doc_1764316596255",
+    "meta": {
+      "contract": "KTR-002",
+      "vendor": "PT. PERKASA",
+      "arrivalDate": "2025-11-25",
+      "status": "Selesai",
+      "geo": null,
+      "bapbNo": "BAPB-2939",
+      "manualSignedId": "doc_1764325690721",
+      "manualSignedName": "Konfirmasi BAPB coba1.pdf"
+    },
+    "signatures": [],
+    "files": [],
+    "createdAt": "2025-11-28T07:56:36.262Z"
+  },
+  {
+    "id": "doc_1764318860494",
+    "meta": {
+      "contract": "KTR-012",
+      "vendor": "PT. JAYA JAYA JAYA",
+      "arrivalDate": "2025-11-28",
+      "status": "Menunggu Persetujuan",
+      "geo": null,
+      "bapbNo": "BAPB-3666"
+    },
+    "signatures": [],
+    "files": [],
+    "createdAt": "2025-11-28T08:34:20.503Z"
+  }
+]
