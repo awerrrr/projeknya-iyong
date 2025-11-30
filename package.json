@@ -1,0 +1,15 @@
+{
+  "name": "bapsa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BAPSA Netlify site with serverless API",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "docusign-esign": "^6.4.0",
+    "@supabase/supabase-js": "^2.44.4",
+    "@netlify/blobs": "^6.4.0"
+  }
+}

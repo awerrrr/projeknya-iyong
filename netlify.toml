@@ -1,0 +1,30 @@
+[build]
+  publish = "public"
+  # Tidak ada proses build; aplikasi statis
+  command = ""
+
+[functions]
+  directory = "functions"
+  node_bundler = "esbuild"
+
+# Pastikan root menampilkan index di folder public
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+# Opsi cache ringan untuk aset statis
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
